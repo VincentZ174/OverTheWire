@@ -2,7 +2,7 @@ Terminal
 ===
 ```  
 ssh narnia0@narnia.labs.overthewire.org  
-narnia0@narnia.labs.overthewire.org's password:narnia0 <enter>  
+narnia0@narnia.labs.overthewire.org's password: narnia0 <enter>  
 narnia0@melinda:~$ cd /narnia
 narnia0@melinda:/narnia$ cat narnia0.c
 /*
