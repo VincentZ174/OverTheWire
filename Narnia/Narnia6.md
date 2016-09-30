@@ -21,9 +21,9 @@ narnia6@melinda:/narnia$ cat narnia6.c
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 #include <stdio.h>
-#include <stdlib.h>
 ```
-**<---- Contains system() function**``
+`#include <stdlib.h>` **<---- Contains system() function**``
+```  
 #include <string.h>
 
 extern char **environ;
@@ -105,5 +105,6 @@ narnia7
 $ cat /etc/narnia_pass/narnia7
 ahkiaziphu  
 
+```
 
 
