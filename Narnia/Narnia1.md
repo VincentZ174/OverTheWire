@@ -43,5 +43,5 @@ $ whoami
 narnia2  
 $ cat /etc/narnia_pass/narnia2
 nairiepecu  
-a
+
 ```
