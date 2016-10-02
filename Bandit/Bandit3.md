@@ -13,5 +13,4 @@ drwxr-xr-x 3 root    root    4096 Nov 14  2014 ..
 -rw-r----- 1 bandit4 bandit3   33 Nov 14  2014 .hidden  
 bandit3@melinda:~/inhere$ cat .hidden  
 pIwrPrtPN36QITSp3EQaw936yaFoFgAB  
-
 ```
