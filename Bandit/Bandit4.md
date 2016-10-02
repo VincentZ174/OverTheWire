@@ -1,5 +1,6 @@
 Terminal  
 ===  
+```    
 ssh bandit4@bandit.labs.overthewire.org  
 bandit4@bandit.labs.overthewire.org's password: pIwrPrtPN36QITSp3EQaw936yaFoFgAB  
 bandit4@melinda:~$ ls  
@@ -22,4 +23,4 @@ bandit4@melinda:~/inhere$ file ./-*
 ./-file09:  data   
 bandit4@melinda:~/inhere$ cat ./-file07  
 koReBOKuIDDepwhWk7jZC0RTdopnAYKh  
-
+```
